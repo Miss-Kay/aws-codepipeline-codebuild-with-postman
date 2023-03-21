@@ -378,7 +378,7 @@ Resources:
             - s3:GetObject
             - s3:GetObjectVersion
             Resource:
-            - Fn::Sub: arn:aws:s3:::${BucketRoot}/*
+            - Fn::Sub: arn:aws:s3:::misskayapi/*
           -
             Effect: Allow
             Action:
