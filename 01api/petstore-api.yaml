@@ -1,36 +1,16 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-
-Parameters:
-  GitHubRepositoryName:
-    Type: String
-    Description: GitHub repository name.
-    MinLength: 1
-    MaxLength: 100
-  GitHubUser:
-    Type: String
-  GitHubBranch:
-    Type: String
-  GitHubToken:
-    Type: String
-    Description: repository token.
-    NoEcho: true
-  BucketRoot:
-    Type: String
-    Description: bucket containing project artifacts e.g. postman config files, etc.
-    MinLength: 1
-    MaxLength: 100
 Resources:
   PetStoreAPI:
     Type: AWS::Serverless::Api
     Properties:
       StageName: prod
       DefinitionUri: petstore-swagger.json
-    
+
 Outputs:
 
-    PetStoreAPI:
-      Description: "Root API endpoint URL for Prod stage"
-      Value: !Sub "https://${PetStoreAPI}.execute-api.${AWS::Region}.amazonaws.com/prod"
-      Export:
-        Name: PetStoreAPIRoot
+  PetStoreAPI:
+    Description: "Root API endpoint URL for Prod stage"
+    Value: !Sub "https://${PetStoreAPI}.execute-api.${AWS::Region}.amazonaws.com/prod"
+    Export:
+      Name: PetStoreAPIRoot
