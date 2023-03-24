@@ -25,7 +25,7 @@ Resources:
     Type: AWS::Serverless::Api
     Properties:
       StageName: prod
-      DefinitionUri: s3://misskayapi/postman-env-files/petstore-swagger.json
+      DefinitionUri: petstore-swagger.json
     
 Outputs:
 
